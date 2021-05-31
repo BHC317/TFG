@@ -1,0 +1,51 @@
+<mxGraphModel>
+  <root>
+    <Diagram label="My Diagram" href="http://www.jgraph.com/" id="0">
+      <mxCell />
+    </Diagram>
+    <Layer label="Default Layer" id="1">
+      <mxCell parent="0" />
+    </Layer>
+    <Roundrect label="Laguna" href="" id="8">
+      <mxCell style="rounded;strokeColor=#98E22E;fillColor=#98E22E;gradientColor=none" vertex="1" parent="1">
+        <mxGeometry x="290" y="30" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Roundrect label="Patos" href="" id="9">
+      <mxCell style="rounded;strokeColor=#68C6F9;fillColor=#68C6F9;gradientColor=none;deletable=0;editable=0;" vertex="1" parent="1">
+        <mxGeometry x="125" y="200" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Connector label="" href="" id="10">
+      <mxCell edge="1" parent="1" source="8" target="9">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+    </Connector>
+    <Roundrect label="Peces" href="" id="11">
+      <mxCell style="rounded;strokeColor=#68C6F9;fillColor=#68C6F9;gradientColor=none;deletable=0;editable=0;" vertex="1" parent="1">
+        <mxGeometry x="345" y="170" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Connector label="" href="" id="12">
+      <mxCell edge="1" parent="1" source="8" target="11">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+    </Connector>
+    <Roundrect label="Ojos" href="" id="13">
+      <mxCell style="rounded;strokeColor=#f5a631;fillColor=#f5a631;gradientColor=none;" vertex="1" parent="1">
+        <mxGeometry x="135" y="320" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Connector label="" href="" id="14">
+      <mxCell edge="1" parent="1" source="9" target="13">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+    </Connector>
+    <Titulo text="La laguna" id="5">
+      <mxCell parent="0" />
+    </Titulo>
+    <TextoComprension text="Historia laguna (Lorem.......................)" id="7">
+      <mxCell parent="0" />
+    </TextoComprension>
+  </root>
+</mxGraphModel>

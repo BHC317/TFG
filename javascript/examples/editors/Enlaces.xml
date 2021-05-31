@@ -1,0 +1,60 @@
+<mxGraphModel>
+  <root>
+    <Diagram label="My Diagram" href="http://www.jgraph.com/" id="0">
+      <mxCell />
+    </Diagram>
+    <Layer label="Default Layer" id="1">
+      <mxCell parent="0" />
+    </Layer>
+    <Roundrect label="eres" href="" id="14">
+      <mxCell style="rounded;strokeColor=#f5a631;fillColor=#f5a631;gradientColor=none;" vertex="1" parent="1">
+        <mxGeometry x="230" y="50" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Roundrect label="hola" href="" id="15">
+      <mxCell style="rounded;strokeColor=#f5a631;fillColor=#f5a631;gradientColor=none;" vertex="1" parent="1">
+        <mxGeometry x="200" y="260" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Roundrect label="la mejor" href="" id="16">
+      <mxCell style="rounded;strokeColor=#f5a631;fillColor=#f5a631;gradientColor=none;" vertex="1" parent="1">
+        <mxGeometry x="10" y="80" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Roundrect label="El numero 1" href="" id="18">
+      <mxCell style="rounded;strokeColor=#98E22E;fillColor=#98E22E;gradientColor=none;" vertex="1" parent="1">
+        <mxGeometry x="485" y="150" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Connector label="considerado" href="" id="19">
+      <mxCell style="rounded;strokeColor=#98E22E;fillColor=#98E22E;gradientColor=none;" edge="1" parent="1" source="14" target="18">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+    </Connector>
+    <Roundrect label="el conserje" href="" id="22">
+      <mxCell style="rounded;strokeColor=#68C6F9;fillColor=#68C6F9;gradientColor=none;" vertex="1" parent="1">
+        <mxGeometry x="505" y="250" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Connector label="dice" href="" id="23">
+      <mxCell style="rounded;strokeColor=#f5a631;fillColor=#f5a631;gradientColor=none;" edge="1" parent="1" source="15" target="22">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+    </Connector>
+    <Titulo text="Enlaces" id="5">
+      <mxCell parent="0" />
+    </Titulo>
+    <TextoComprension text="Introduzca el texto" id="7">
+      <mxCell parent="0" />
+    </TextoComprension>
+    <Restringido text="false" cont="5" id="9">
+      <mxCell parent="0" />
+    </Restringido>
+    <MostrarListaConceptos text="true" id="11">
+      <mxCell parent="0" />
+    </MostrarListaConceptos>
+    <MostrarListaEnlaces text="false" id="13">
+      <mxCell parent="0" />
+    </MostrarListaEnlaces>
+  </root>
+</mxGraphModel>

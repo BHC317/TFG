@@ -1,0 +1,82 @@
+<mxGraphModel>
+  <root>
+    <Diagram label="My Diagram" href="http://www.jgraph.com/" id="0">
+      <mxCell />
+    </Diagram>
+    <Layer label="Default Layer" id="1">
+      <mxCell parent="0" />
+    </Layer>
+    <Roundrect label="Mapa conceptual" href="" id="12">
+      <mxCell style="rounded;strokeColor=#f5a631;fillColor=#f5a631;gradientColor=none;" vertex="1" parent="1">
+        <mxGeometry x="270" y="20" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Roundrect label="Representar contenido de un texto" href="" id="15">
+      <mxCell style="rounded;strokeColor=#68C6F9;fillColor=#68C6F9;gradientColor=none;" vertex="1" parent="1">
+        <mxGeometry x="10" y="190" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Connector label="Sirve para" href="" id="16">
+      <mxCell style="rounded;strokeColor=#f5a631;fillColor=#f5a631;gradientColor=none;" edge="1" parent="1" source="12" target="15">
+        <mxGeometry x="0.0362" y="5" relative="1" as="geometry">
+          <mxPoint as="offset" />
+        </mxGeometry>
+      </mxCell>
+    </Connector>
+    <Roundrect label="Su estructura" href="" id="18">
+      <mxCell style="rounded;strokeColor=#f5a631;fillColor=#f5a631;gradientColor=none;" vertex="1" parent="1">
+        <mxGeometry x="280" y="200" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Connector label="Se caracteriza por" href="" id="19">
+      <mxCell style="rounded;strokeColor=#98E22E;fillColor=#98E22E;gradientColor=none;" edge="1" parent="1" source="12" target="18">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+    </Connector>
+    <Roundrect label="Su presentación" href="" id="22">
+      <mxCell style="rounded;strokeColor=#68C6F9;fillColor=#68C6F9;gradientColor=none;" vertex="1" parent="1">
+        <mxGeometry x="460" y="200" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Connector label="Se caracteriza por" href="" id="23">
+      <mxCell style="rounded;strokeColor=#98E22E;fillColor=#98E22E;gradientColor=none;" edge="1" parent="1" source="12" target="22">
+        <mxGeometry relative="1" as="geometry">
+          <mxPoint x="500" y="90" as="sourcePoint" />
+          <mxPoint x="500" y="190" as="targetPoint" />
+        </mxGeometry>
+      </mxCell>
+    </Connector>
+    <Roundrect label="Selección de conceptos" href="" id="25">
+      <mxCell style="rounded;strokeColor=#98E22E;fillColor=#98E22E;gradientColor=none;" vertex="1" parent="1">
+        <mxGeometry x="40" y="350" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Connector label="Por medio de" href="" id="26">
+      <mxCell style="rounded;strokeColor=#98E22E;fillColor=#98E22E;gradientColor=none;" edge="1" parent="1" source="15" target="25">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+    </Connector>
+    <Roundrect label="Jerárquica" href="" id="28">
+      <mxCell style="rounded;strokeColor=#98E22E;fillColor=#98E22E;gradientColor=none;" vertex="1" parent="1">
+        <mxGeometry x="280" y="410" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Connector label="Debe ser" href="" id="29">
+      <mxCell style="rounded;strokeColor=#98E22E;fillColor=#98E22E;gradientColor=none;" edge="1" parent="1" source="18" target="28">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+    </Connector>
+    <Titulo text="Mapa conceptual" id="5">
+      <mxCell parent="0" />
+    </Titulo>
+    <TextoComprension text="Descripción de la idea de mapa conceptual" id="7">
+      <mxCell parent="0" />
+    </TextoComprension>
+    <Restringido text="true" cont="7" id="9">
+      <mxCell parent="0" />
+    </Restringido>
+    <MostrarLista text="true" id="11">
+      <mxCell parent="0" />
+    </MostrarLista>
+  </root>
+</mxGraphModel>

@@ -1,0 +1,379 @@
+<mxEditor>
+	 <ui>
+		<resource basename="resources/app"/>
+	</ui> 
+	<mxDefaultPopupMenu as="popupHandler">
+		<add as="cut" action="cut" icon="images/cut.gif"/>
+		<add as="copy" action="copy" icon="images/copy.gif"/>
+		<add as="paste" action="paste" icon="images/paste.gif"/>
+
+		<add as="delete" action="delete" icon="images/delete.gif" if="cell"/>
+		<separator/>
+		<add as="Mostrar nodo y texto" action="fijar" icon="images/fijar.jpg" if="cell"/>
+		<add as="Mostrar sólo nodo (sin texto)" action="fijarSinTexto" icon="images/fijar.jpg" if="cell"/>		
+		<add as="No mostrar ayuda" action="ocultar" icon="images/ocultar.jpg" if="cell"/>
+
+
+
+		<separator/>
+	</mxDefaultPopupMenu>
+	<include name="config/keyhandler-commons.xml"/>
+	<Array as="actions">
+		<add as="open"><![CDATA[
+			function (editor)
+			{
+				editor.open(mxUtils.prompt('Enter filename', 'workflow.xml'));
+			}
+		]]></add>
+		<add as="help"><![CDATA[
+			function (editor)
+			{
+				
+				var content = document.createElement('div');
+				
+				var p = document.createElement('p');
+				mxUtils.write(p, " - Para la ");	
+				
+				b = document.createElement('b');
+				mxUtils.write(b,"creación de conceptos");
+				p.appendChild(b);
+				mxUtils.write(p,": Clicar en el icono de Nuevo Concepto y arrastrar hasta la posición deseada");
+				content.appendChild(p);
+				
+				var p = document.createElement('p');
+				mxUtils.write(p, " - Para ");		
+				b = document.createElement('b');
+				mxUtils.write(b,"crear los enlaces y unir los conceptos");
+				p.appendChild(b);	
+				mxUtils.write(p,": Clicar sobre el icono de flecha que aparecerá en el centro del concepto al poner encima el cursor");								
+				content.appendChild(p);		
+				
+				p = document.createElement('p');
+				mxUtils.write(p, " - Existen  ");		
+				b = document.createElement('b');
+				mxUtils.write(b,"tres modos de ayuda");
+				p.appendChild(b);
+				mxUtils.write(p," al alumno, mostrarle el concepto o enlace con el texto, mostrarle el concepto o enlace para que tenga que rellenar el texto o no mostrarle nada");								
+				content.appendChild(p);					
+				
+				p = document.createElement('p');
+				mxUtils.write(p, " - Existe una opción para  ");		
+				b = document.createElement('b');
+				mxUtils.write(b,"limitar al alumno la creación de un número de nodos mayor que el de la solución");
+				p.appendChild(b);
+				mxUtils.write(p," diseñada");								
+				content.appendChild(p);		
+
+				p = document.createElement('p');
+				mxUtils.write(p, " - Existe una opción para ");		
+				
+				b = document.createElement('b');
+				mxUtils.write(b,"mostrarle al alumno una lista de los textos de nodos y enlaces");			
+				p.appendChild(b);
+				mxUtils.write(p," que se hayan marcado como no visibles para estos");				
+				content.appendChild(p);					
+	
+				p = document.createElement('p');
+				mxUtils.write(p, " - Al terminar de diseñar la solución ");	
+				b = document.createElement('b');
+				mxUtils.write(b,"clicar en Guardar");			
+				p.appendChild(b);				
+				content.appendChild(p);						
+			
+				var wnd = new mxWindow('Ayuda de la herramienta', content, 970, 100, 720, 200, true, true);
+				wnd.setMaximizable(true);
+				wnd.setClosable(true);
+				wnd.setScrollable(true);
+				wnd.setResizable(true);
+				wnd.setVisible(true);
+				
+			}
+		]]></add>		
+		<add as="fijar"><![CDATA[
+			function (editor)
+			{
+					var sePuede = true;
+				    
+
+					var cells = editor.graph.getModel().cells;
+					console.log(editor.graph.getSelectionCell());
+					if(editor.graph.getSelectionCell().value.nodeName == "Connector"){
+						var conector = editor.graph.getSelectionCell();
+						var source = conector.source;
+						var target = conector.target;
+						if(source.style == "rounded;strokeColor=#98E22E;fillColor=#98E22E;gradientColor=none;" || target.style == "rounded;strokeColor=#98E22E;fillColor=#98E22E;gradientColor=none;"){
+						   console.log("Verde");
+					       swal("","No se puede fijar el enlace ya que uno de los nodos que conecta se ocultará al alumno","error");				   
+						   sePuede = false;
+						}
+						}
+					
+					if(sePuede){
+					editor.graph.model.beginUpdate();
+					try
+					{
+						editor.graph.setCellStyles("strokeColor", "#68C6F9");
+						editor.graph.setCellStyles("fillColor", "#68C6F9");
+                        editor.graph.setCellStyles("gradientColor", "none"); 
+
+						
+					}
+					finally
+					{
+						editor.graph.model.endUpdate();
+					}
+					}
+				
+			}
+		]]></add>
+		<add as="fijarSinTexto"><![CDATA[
+			function (editor)
+			{
+					var sePuede = true;
+				    
+
+					var cells = editor.graph.getModel().cells;
+					console.log(editor.graph.getSelectionCell());
+					if(editor.graph.getSelectionCell().value.nodeName == "Connector"){
+						var conector = editor.graph.getSelectionCell();
+						var source = conector.source;
+						var target = conector.target;
+						if(source.style == "rounded;strokeColor=#98E22E;fillColor=#98E22E;gradientColor=none;" || target.style == "rounded;strokeColor=#98E22E;fillColor=#98E22E;gradientColor=none;"){
+						   console.log("Verde");
+					       swal("","No se puede fijar el enlace ya que uno de los nodos que conecta se ocultará al alumno","error");						   
+						   sePuede = false;
+						}
+						}
+					
+					if(sePuede){							
+				
+					editor.graph.model.beginUpdate();
+					try
+					{
+						editor.graph.setCellStyles("strokeColor", "#f5a631");
+						editor.graph.setCellStyles("fillColor", "#f5a631");
+                        editor.graph.setCellStyles("gradientColor", "none"); 						
+					}
+					finally
+					{
+						editor.graph.model.endUpdate();
+					}
+					}
+				
+			}
+		]]></add>		´
+        <add as="ocultar"><![CDATA[
+			function (editor)
+			{
+							
+					console.log(editor.graph.getSelectionCell());
+					var cell = editor.graph.getSelectionCell();
+					console.log(cell.edges);
+					var edges = cell.edges;
+					for(var e in edges){
+						
+						editor.graph.model.beginUpdate();
+						try
+						{
+						 edges[e].style = "rounded;strokeColor=#98E22E;fillColor=#98E22E;gradientColor=none";
+						}
+						finally
+						{
+							editor.graph.model.endUpdate();
+						}						
+					}
+					cell.edges = edges;
+					editor.graph.refresh();
+					editor.graph.model.beginUpdate();
+					try
+					{
+						editor.graph.setCellStyles("strokeColor", "#98E22E");
+						editor.graph.setCellStyles("fillColor", "#98E22E");
+                        editor.graph.setCellStyles("gradientColor", "none"); 						
+					}
+					finally
+					{
+						editor.graph.model.endUpdate();
+					}
+				
+			}
+		]]></add>
+		<add as="editStyle"><![CDATA[
+			function (editor)
+			{
+				var cell = editor.graph.getSelectionCell();
+				
+				if (cell != null)
+				{
+					var model = editor.graph.getModel();
+					var style = mxUtils.prompt(mxResources.get('enterStyle'), model.getStyle(cell) || '');
+
+					if (style != null)
+					{
+						model.setStyle(cell, style);
+					}
+				}
+			}
+		]]></add>
+		<add as="fillColor"><![CDATA[
+			function (editor)
+			{
+				var color = mxUtils.prompt(mxResources.get('enterColorname'), 'red');
+				
+				if (color != null)
+				{
+					editor.graph.model.beginUpdate();
+					try
+					{
+						editor.graph.setCellStyles("strokeColor", color);
+						editor.graph.setCellStyles("fillColor", color);
+					}
+					finally
+					{
+						editor.graph.model.endUpdate();
+					}
+				}
+			}
+		]]></add>
+		<add as="gradientColor"><![CDATA[
+			function (editor)
+			{
+				var color = mxUtils.prompt(mxResources.get('enterColorname'), 'white');
+				
+				if (color != null)
+				{
+					editor.graph.setCellStyles("gradientColor", color);
+				}
+			}
+		]]></add>
+		<add as="strokeColor"><![CDATA[
+			function (editor)
+			{
+				var color = mxUtils.prompt(mxResources.get('enterColorname'), 'red');
+				
+				if (color != null)
+				{
+					editor.graph.setCellStyles("strokeColor", color);
+				}
+			}
+		]]></add>
+		<add as="fontColor"><![CDATA[
+			function (editor)
+			{
+				var color = mxUtils.prompt(mxResources.get('enterColorname'), 'red');
+				
+				if (color != null)
+				{
+					editor.graph.setCellStyles("fontColor", color);
+				}
+			}
+		]]></add>
+		<add as="fontFamily"><![CDATA[
+			function (editor)
+			{
+				var family = mxUtils.prompt(mxResources.get('enterFontfamily'), 'Arial');
+				
+				if (family != null && family.length > 0)
+				{
+					editor.graph.setCellStyles("fontFamily", family);
+				}
+			}
+		]]></add>
+		<add as="fontSize"><![CDATA[
+			function (editor)
+			{
+				var size = mxUtils.prompt(mxResources.get('enterFontsize'), '10');
+				
+				if (size != null && size > 0 && size < 999)
+				{
+					editor.graph.setCellStyles("fontSize", size);
+				}
+			}
+		]]></add>
+		<add as="image"><![CDATA[
+			function (editor)
+			{
+				var image = mxUtils.prompt(mxResources.get('enterImageUrl'),
+					'examples/images/image.gif');
+				
+				if (image != null)
+				{
+					editor.graph.setCellStyles("image", image);
+				}
+			}
+		]]></add>
+		<add as="opacity"><![CDATA[
+			function (editor)
+			{
+				var opacity = mxUtils.prompt(mxResources.get('enterOpacity'), '100');
+				
+				if (opacity != null && opacity >= 0 && opacity <= 100)
+				{
+					editor.graph.setCellStyles("opacity", opacity);
+				}
+			}
+		]]></add>
+		<add as="straightConnector"><![CDATA[
+			function (editor)
+			{
+				editor.graph.setCellStyle("straightEdge");
+			}
+		]]></add>
+		<add as="elbowConnector"><![CDATA[
+			function (editor)
+			{
+				editor.graph.setCellStyle("");
+			}
+		]]></add>
+		<add as="arrowConnector"><![CDATA[
+			function (editor)
+			{
+				editor.graph.setCellStyle("arrowEdge");
+			}
+		]]></add>
+		<add as="toggleOrientation"><![CDATA[
+			function (editor, cell)
+			{
+				editor.graph.toggleCellStyles(mxConstants.STYLE_HORIZONTAL, true);
+			}
+		]]></add>
+		<add as="toggleRounded"><![CDATA[
+			function (editor)
+			{
+				editor.graph.toggleCellStyles(mxConstants.STYLE_ROUNDED);
+			}
+		]]></add>
+		<add as="toggleShadow"><![CDATA[
+			function (editor)
+			{
+				editor.graph.toggleCellStyles(mxConstants.STYLE_SHADOW);
+			}
+		]]></add>
+		<add as="horizontalTree"><![CDATA[
+			function (editor, cell)
+			{
+				cell = cell || editor.graph.getSelectionCell();
+				
+				if (cell == null)
+				{
+					cell = editor.graph.getDefaultParent();
+				}
+				
+				editor.treeLayout(cell, true);
+			}
+		]]></add>
+		<add as="verticalTree"><![CDATA[
+			function (editor, cell)
+			{
+				cell = cell || editor.graph.getSelectionCell();
+				
+				if (cell == null)
+				{
+					cell = editor.graph.getDefaultParent();
+				}
+				
+				editor.treeLayout(cell, false);
+			}
+		]]></add>
+	</Array>
+</mxEditor>
