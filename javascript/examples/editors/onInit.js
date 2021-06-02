@@ -753,7 +753,7 @@ mxConnectionHandler.prototype.connect = function(source, target, evt, dropTarget
 			
 			var div = document.createElement('div');
 			div.setAttribute("id",'checkboxs');
-			div.setAttribute("style","right;height:20px;width:700px");
+			div.setAttribute("style","left;height:20px;width:100%");
 			node.appendChild(div);
 			node = document.getElementById('checkboxs');
 			var checkbox = document.createElement('input');

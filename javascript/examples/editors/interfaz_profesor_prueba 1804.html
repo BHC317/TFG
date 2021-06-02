@@ -4,7 +4,7 @@
  	<link rel="stylesheet" href="css/wordpress.css" type="text/css" media="screen" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<style type="text/css" media="screen">
-		#page { background: url("images/draw/drawbg.jpg") repeat-y top; border: none; }
+#page { background: url("images/draw/drawbgcolor.jpg") repeat-x repeat-y top; border: none; }
 	</style>
 	<script type="text/javascript">
 		var mxBasePath = '../../src';
@@ -39,36 +39,36 @@
 
 </head>
 <body onLoad="inicio();">
-	<div id="page">
-		<div id="header">
+	<div id="page" style="width:100%">
+		<div id="header" style="width:100%">
 			<div id="headerimg" style="overflow:hidden;">
 				<h1 id="title">Diseño Mapa Conceptual</h1>
 			</div>
 		</div>
-		<span id="span" style="float:left;">
- 				<div id="textoComprension" style="width:100%;padding-left:40px;">
+		<span id="span" style="float:center;">
+ 				<div id="textoComprension" style="width:100%;padding-left:98px;box-sizing: border-box;">
 				<h4> Texto Comprensión Lectora </h4>
-				<textarea id="titulo" cols="35" rows="1" placeholder="Título" ></textarea>
+				<textarea id="titulo" cols="50" rows="1" placeholder="Título" ></textarea>
 				<p></p>
-				<textarea id="textoComprensionText" cols="86" rows="4" placeholder="Introduzca el texto"></textarea>
+				<textarea id="textoComprensionText" style="position:relative;width:100%;overflow:hidden;cursor:default;box-sizing: border-box;" cols="250" rows="4" placeholder="Introduzca el texto"></textarea>
 				<p></p>
 				</div>		
 				
 		  <div id="mainActions"
-			style="width:73%;padding-top:8px;padding-left:40px;padding-bottom:8px;">
+			style="width:100%;padding-left:98px;padding-top:8px;padding-center:24px;padding-bottom:8px;box-sizing: border-box;">
 			
            <input id="vistaAlumno" type="checkbox" style="right;display:none;"/><!--Vista Alumno -->
             		   
 		  </div>	
-		  <div id="selectActions" style="width:100%;padding-left:54px;">
+		  <div id="selectActions" style="width:100%;padding-left:98px;box-sizing: border-box;padding-center:54px;padding-bottom:4px;">
 		  </div>
   
 		</span>
 
 
-		<table id="tabla"  border="0" width="730px">
+		<table id="tabla"  border="0" width="100%">
 			<tr>
-				<td id="t" style="width:30%;padding-left:20px;height:480px;" valign="top">
+				<td id="t" style="width:16px;padding-center:20px;" valign="top">
 					<!-- Toolbar Here -->	
 				<div id="toolbar">
 				</div>			
@@ -76,12 +76,11 @@
 
 				<td valign="top" style="border-width:1px;border-style:solid;border-color:black;">
 
-					<div id="graph" style="position:relative;height:480px;width:594px;overflow:hidden;cursor:default;">
+					<div id="graph" style="position:relative;height:480px;width:100%;overflow:hidden;cursor:default;">
 						<!-- Graph Here -->
-						<center id="splash" style="padding-top:325px;">
+						<center id="splash" style="padding-top:230px;">
 							<!-- <button type="button" id="Introducir texto"  onclick="crearAreaTexto();" autofocus style="padding: 5px 10px; width: 185; height: 60; font-size: 16px; color: white;  background-color: #73a0c5;">Introducir texto</button>	-->					
 							<button type="button" id="diseño" onclick="inicio();" autofocus style="display:none;padding: 5px 10px; width: 185; height: 60; font-size: 16px; color: white;  background-color: #73a0c5;">Diseño solución</button>
-
 						</center>
 					</div>
 					<textarea id="xml" style="height:480px;width:684px;display:none;border-style:none;"></textarea>
@@ -93,9 +92,9 @@
 			<input id="source" type="checkbox"  text="Source" style="display:none;"/>
 			<button type="button" id="guardar" onclick="guardar();" style="color: white;  background-color: #73a0c5; border-radius: 8px;">Guardar</button>
 		</span>
-		<div id="zoomActions" style="width:100%;padding-left:54px;padding-top:4px;">
+		<div id="zoomActions" style="width:100%;padding-left:98px;box-sizing: border-box;padding-center:54px;padding-bottom:4px;">
 		</div>
-		<div id="footer">
+		<div id="footer" style="height:20px">
 			<p id="status">
 				<!-- Status Here -->..
 			</p>

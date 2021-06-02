@@ -2,7 +2,7 @@
 body {
 	font-size: 62.5%; /* Resets 1em to 10px */
 	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
-	background: #d5d6d7 url('../images/draw/drawbgcolor.jpg');
+	/*background: #d5d6d7 url('../images/draw/drawbgcolor.jpg');*/
 	color: #333;
 	text-align: center;
 	}
@@ -11,17 +11,16 @@ body {
 	background-color: white;
 	border: 1px solid #959596;
 	text-align: left;
-	width: 80%;
+	width: 100%;
 	}
 
 #header {
-	background: #73a0c5 url('../images/draw/drawheader.jpg') no-repeat bottom center;
+	background: #73a0c5 /*url('../images/draw/drawheader.jpg') no-repeat bottom center;*/
 	}
 
 #headerimg 	{ 
-	margin: 7px 9px 0; 
 	height: 62px; 
-	width: 740px; 
+	width: 100%; 
 	} 
 
 #content {
@@ -57,7 +56,7 @@ pre {
 }
 
 #footer {
-	background: #eee url('../images/draw/drawfooter.jpg') no-repeat top; 
+	/*background: #eee url('../images/draw/drawfooter.jpg') no-repeat top; */
 	border: none;
 	}
 
@@ -67,7 +66,7 @@ small {
 	line-height: 1.5em;
 	}
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
 	font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Sans-Serif;
 	font-weight: bold;
 	}
@@ -97,6 +96,13 @@ h2.pagetitle {
 
 h3 {
 	font-size: 1.3em;
+	}
+h4 {
+	font-size: 1.6em;
+	margin-bottom: 20px;
+	magin-top: 20px;
+    margin-block-start: 1.03em;
+	margin-block-end: 0.5em;
 	}
 
 h1, h1 a, h1 a:hover, h1 a:visited, #headerimg .description {
@@ -202,9 +208,8 @@ body {
 
 #page {
 	background-color: white;
-	margin: 20px auto;
 	padding: 0;
-	width: 760px;
+	width: 100%;
 	border: 1px solid #959596;
 	}
 
@@ -213,7 +218,7 @@ body {
 	margin: 0 0 0 1px; 
 	padding: 0; 
 	height: 70px;
-	width: 758px;
+	width: 100%;
 	}
 
 #headerimg {
@@ -221,6 +226,10 @@ body {
 	height: 70px;
 	width: 100%;
 	}
+#status{
+	margin: 0 0 0px 0;
+	padding: 0; 	
+}
 
 .narrowcolumn {
 	float: left;
@@ -277,8 +286,8 @@ body {
 
 #footer p {
 	margin: 0;
-	padding: 20px 0;
 	text-align: center;
+	padding: 0 0;
 	}
 /* End Structure */
 
@@ -364,7 +373,7 @@ img.alignleft {
 
 html>body .entry ul {
 	margin-left: 0px;
-	padding: 0 0 0 30px;
+	padding: 0 0 0 0px;
 	list-style: none;
 	padding-left: 10px;
 	text-indent: -10px;
