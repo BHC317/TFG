@@ -1,0 +1,162 @@
+<html>
+<head>
+	<title>Mapa Conceptual</title>
+ 	<link rel="stylesheet" href="css/wordpress.css" type="text/css" media="screen" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<style type="text/css" media="screen">
+		#page { background: url("images/draw/drawbgcolor.jpg") repeat-x repeat-y top; border: none; }
+	</style>
+	<script type="text/javascript">
+		var mxBasePath = '';
+		
+		var urlParams = (function(url)
+		{
+			var result = new Object();
+			var params = window.location.search.slice(1).split('&');
+			
+			for (var i = 0; i < params.length; i++)
+			{
+				idx = params[i].indexOf('=');
+				
+				if (idx > 0)
+				{
+					result[params[i].substring(0, idx)] = params[i].substring(idx + 1);
+				}
+			}
+			
+			return result;
+		})(window.location.href);
+		
+		var mxLanguage = urlParams['lang'];
+	</script>
+	<script type="text/javascript" src="mxClient.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="onInit_alumno.js"></script>
+	<script type="text/javascript" src="configuracion.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	
+</head>
+<body onload="inicio(false);" id="body">
+	<div id="page" style="width:100%">
+		<div id="header" style="width:100%">
+			<div id="headerimg" style="overflow:hidden;">
+				<h1 id="title">Diseño Mapa Conceptual</h1>
+			</div>
+		</div>
+		<span style="float:left;">
+ 				<div id="textoComprension" style="width:100%;padding-left:122px;box-sizing: border-box;">
+				<h4> Texto Comprensión Lectora </h4>
+				<textarea id="titulo" readonly="readonly" rows="1" value="" placeholder="Título"></textarea>
+				<p></p>
+				<textarea id="textoComprensionText" readonly="readonly"  style="position:relative;width:100%;overflow:hidden;cursor:default;box-sizing: border-box;" cols="250" rows="4" value="" placeholder="Texto comprensión lectora"></textarea>
+				<p></p>
+				</div>				
+		  <div id="mainActions"
+			style="width:100%;padding-left:122px;padding-top:8px;padding-center:24px;padding-bottom:8px;box-sizing: border-box;">
+			
+           <input id="vistaAlumno" type="checkbox" style="display:none"/>
+            		   
+		  </div>	
+		  <div id="selectActions" style="width:100%;padding-left:122px;box-sizing: border-box;padding-center:54px;padding-bottom:4px;">
+		  </div>
+  
+		</span>
+
+
+		<table border="0" width="100%">
+			<tr>
+			    
+				<td id="t" style="width:16px;padding-center:20px;" valign="top">
+					<!-- Toolbar Here -->	
+				<div id="toolbar">
+				</div>
+				<br></br>
+			    <div id="lista" style="display:none;font-size:11px;center">
+				<input id="mostrado" value="false" style="display:none;"/>				    
+					<b>Lista de Conceptos</b>				
+				</div>
+			    <div id="listaEnlaces" style="display:none;font-size:11px;center;">
+				<input id="mostradoEnlaces" value="false" style="display:none;"/>
+					<div>
+					<br></br>			
+					<b>Lista de Enlaces</b>
+					</div>
+				</div>				
+				</td>
+			
+				<!--<td id="toolbarTexto" style="width:30%;" valign="top">
+					<!-- Toolbar Here -->	
+					<br></br>
+					<!--<b>Nuevo Concepto</b>
+			    
+				</td> -->
+				<td valign="top" style="border-width:1px;border-style:solid;border-color:black;">
+						<!-- Graph Here -->
+
+					<div id="graph" tabindex="-1" 
+					
+					style="position:relative;height:480px;width:100%;overflow:hidden;cursor:default;">
+					</div>	
+					<textarea id="xml" style="height:480px;width:684px;display:none;border-style:none;"></textarea>
+				</td>
+			</tr>
+		</table>
+		<span style="float:right;padding-right:36px;">
+			<input id="source" type="checkbox" style="display:none;"/>
+		    <button type="button" id="terminar"  value='<mxGraphModel>
+  <root>
+    <Diagram label="My Diagram" href="http://www.jgraph.com/" id="0">
+      <mxCell />
+    </Diagram>
+    <Layer label="Default Layer" id="1">
+      <mxCell parent="0" />
+    </Layer>
+    <Roundrect label="Nuevo concepto" href="" id="8">
+      <mxCell style="rounded;strokeColor=#f5a631;fillColor=#f5a631;gradientColor=none;" vertex="1" parent="1">
+        <mxGeometry x="180" y="50" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Roundrect label="Nuevo concepto" href="" id="10">
+      <mxCell style="rounded;strokeColor=#98E22E;fillColor=#98E22E;gradientColor=none" vertex="1" parent="1">
+        <mxGeometry x="250" y="200" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Connector label="" href="" id="11">
+      <mxCell edge="1" parent="1" source="8" target="10">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+    </Connector>
+    <Roundrect label="Nuevo concepto" href="" id="14">
+      <mxCell style="rounded;strokeColor=#68C6F9;fillColor=#68C6F9;gradientColor=none;" vertex="1" parent="1">
+        <mxGeometry x="45" y="200" width="150" height="80" as="geometry" />
+      </mxCell>
+    </Roundrect>
+    <Connector label="" href="" id="15">
+      <mxCell edge="1" parent="1" source="8" target="14">
+        <mxGeometry relative="1" as="geometry" />
+      </mxCell>
+    </Connector>
+    <Titulo text="Sol" id="5">
+      <mxCell parent="0" />
+    </Titulo>
+    <TextoComprension text="El sol brillaba con más fuerza" id="7">
+      <mxCell parent="0" />
+    </TextoComprension>
+  </root>
+</mxGraphModel>'  onclick="guardar_alumno();" style=" border-radius: 8px; padding: 5px 10px; width: 155; height: 40; font-size: 16px; color: white;  background-color: #73a0c5;">Terminar ejercicio</button>
+		    <button type="button" id="abrir"  onclick="terminar();"  style=" display:none;border-radius: 8px; padding: 5px 10px; width: 155; height: 40; font-size: 16px; color: white;  background-color: #73a0c5;">Abrir XML</button>
+
+		</span>
+		<div id="zoomActions" style="width:100%;padding-left:122px;box-sizing: border-box;padding-center:54px;padding-bottom:4px;">
+		</div>
+		<div id="footer">
+			<p id="status">
+				<!-- Status Here -->Loading...
+			</p>
+			<br/>
+		</div>
+	</div>
+</body>
+</html>
+</html>
