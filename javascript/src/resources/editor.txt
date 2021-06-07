@@ -1,5 +1,0 @@
-askZoom=Enter zoom (%)
-properties=Propiedades
-outline=Outline
-tasks=Tasks
-help=Ayuda
